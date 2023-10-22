@@ -58,7 +58,8 @@ const roll = (reel: HTMLElement, offset = 0) => {
 /**
  * Roll all reels, when promise resolves roll again
  */
-export function rollAll() {
+
+function rollAll() {
     console.log("Debug", debugEl)
     if (!debugEl) return
 
@@ -88,3 +89,5 @@ export function rollAll() {
             setTimeout(rollAll, 3000);
         });
 }
+
+setTimeout(rollAll, 1000);
