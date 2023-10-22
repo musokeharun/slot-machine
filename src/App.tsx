@@ -1,38 +1,35 @@
-import {useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./styles/app.scss"
+import slotBg from "./assets/slotreel.webp"
+import {rollAll} from "./scripts/slot"
 
-function App() {
-    const [count, setCount] = useState(0)
+const App = () => (
+    <>
+        <h1 className="font-bold underline text-center text-5xl text-blue-500">
+            Slot Machine
+        </h1>
 
-    return (
-        <>
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo"/>
-                </a>
-                <h1 className="text-3xl font-bold underline">
-                    Hello world!
-                </h1>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo"/>
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
-        </>
-    )
-}
+        <div className="slots">
+            <div className="reel"></div>
+            <div className="reel"></div>
+            <div className="reel"></div>
+        </div>
+
+        <div className={"px-3 mt-5 flex justify-center"}>
+            <button type="button"
+                    onClick={() => rollAll()}
+                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Spin
+            </button>
+            <button type="button"
+                    className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Reset
+            </button>
+
+        </div>
+
+        <div id="debug" className="debug"></div>
+
+        <img className={"fixed left-0 top-0 h-[100vh] w-auto"} src={slotBg} alt={""}/>
+
+    </>
+);
 
 export default App
