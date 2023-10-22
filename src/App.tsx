@@ -1,5 +1,4 @@
 import "./styles/app.scss"
-import slotBg from "./assets/slotreel.webp"
 import {rollAll} from "./scripts/slot"
 
 const App = () => (
@@ -26,8 +25,6 @@ const App = () => (
         </div>
 
         <div id="debug" className="debug"></div>
-
-        <img className={"fixed left-0 top-0 h-[100vh] w-auto"} src={slotBg} alt={""}/>
 
     </>
 );
